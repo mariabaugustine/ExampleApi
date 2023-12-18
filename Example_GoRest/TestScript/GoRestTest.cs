@@ -55,8 +55,8 @@ namespace Example_GoRest.TestScript
             request.AddHeader("Authorization", $"Bearer {bearerToken}");
             request.AddJsonBody(new
             {
-                name = "Aruna",
-                email = "arunaa@gmail.com",
+                name = "abcdef",
+                email = "abcdef@gmail.com",
                 gender = "female",
                 status = "active"
             });
@@ -70,9 +70,9 @@ namespace Example_GoRest.TestScript
                 var user = JsonConvert.DeserializeObject<UserData>(response.Content);
                 Assert.NotNull(user);
                 Log.Information("User created and returned");
-                Assert.That(user.Name, Is.EqualTo("Ammu"));
+                Assert.That(user.Name, Is.EqualTo("abcdef"));
                 Log.Information($"User Name matches with fetch {user.Name}");
-                Assert.That(user.Email, Is.EqualTo("ammu@gmail.com"));
+                Assert.That(user.Email, Is.EqualTo("abcdef@gmail.com"));
                 Log.Information($"User Email matches with fetch {user.Email}");
                 Assert.That(user.Gender, Is.EqualTo("female"));
                 Log.Information($"User Gender matches with fetch {user.Gender}");
@@ -132,7 +132,7 @@ namespace Example_GoRest.TestScript
             test = extent.CreateTest("Delete User Test");
             Log.Information("Delete User Test");
             string bearerToken = "8b126f288e94e7a4cc8e75bad0dd0a3eb63a7f2a100c4677b7799d3b1922198c";
-            var request = new RestRequest("/5837981", Method.Delete);
+            var request = new RestRequest("/5837961", Method.Delete);
             request.AddHeader("Content-Type", "application/json");
             request.AddHeader("Authorization", $"Bearer {bearerToken}");
 
